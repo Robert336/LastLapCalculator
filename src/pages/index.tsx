@@ -1,8 +1,8 @@
 import React, {useState, useRef} from 'react';
-import {Input} from "../components/ui/Input";
-import TimeInput from '../components/ui/TimeInput';
+import {Input} from "@/components/ui/Input";
+import TimeInput from '@/components/ui/TimeInput';
 import { Inter } from "next/font/google";
-import { formatTime } from '../utils/timeUtils';
+import { formatTime } from '@/utils/timeUtils';
 import { NumberInput } from '@/components/ui/NumberInput';
 import {
   Table,
@@ -46,7 +46,7 @@ export default function Home() {
         <NumberInput onChange={setStartLap} value={startLap}/>
         <p>Time to-go</p>
         <TimeInput onChange={handleChange} id='timeRemainingInputID'  value={timeRemaining}/>
-        <p>Leader's pace</p>
+        <p>Leader&apos;s pace</p>
         <TimeInput onChange={handleChange} id='leaderPaceInputID' value={leaderPace}/>
       </div>
       <h1 className="text-3xl text-gray-700">
