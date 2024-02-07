@@ -12,7 +12,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../components/ui/Table";
+} from "@/components/ui/Table";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {

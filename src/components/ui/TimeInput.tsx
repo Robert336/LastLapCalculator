@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import {Input, InputProps} from './Input';
+import {Input, InputProps} from '@/components/ui/Input';
 import { formatTime, addTimeDigit, removeTimeDigit } from "@/utils/timeUtils";
 
 interface TimeInputProps {
