@@ -19,8 +19,6 @@ export const TimeInput: React.FC<TimeInputProps> = ({onChange, id, value}, ...pr
           onChange(id, newTime);
         } else if (/^\d$/.test(key)) {
           const newTime = addTimeDigit(value, key);
-          console.log(key);
-          console.log(newTime);
           onChange(id, newTime);
         }
         
