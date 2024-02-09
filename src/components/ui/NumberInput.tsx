@@ -1,18 +1,17 @@
-import React, {useState} from 'react';
-import { Input } from '@/components/ui/Input';
+import React from 'react';
+import { Input, InputProps } from '@/components/ui/Input';
 
-interface NumberInputProps {
+interface NumberInputProps extends InputProps {
     value: string
-    onChange: (value: string) => void;
+    onChangeCallback: (value: string) => void;
 }
 
-export const NumberInput: React.FC<NumberInputProps> = ({value, onChange}, ...props) => {
-
+export const NumberInput: React.FC<NumberInputProps> = ({value, onChangeCallback}, ...props) => {
 
     function handleChange(event: React.ChangeEvent<HTMLInputElement>){
         const value = event.target.value;
         // only handle change if input is a number
-        onChange(value.replace(/\D/, ''));
+        onChangeCallback(value.replace(/\D/, ''));
     }
 
     return (
