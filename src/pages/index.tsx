@@ -43,7 +43,7 @@ export default function Home() {
       
       <div className="flex flex-col gap-5">
         <p>Current lap</p>
-        <NumberInput onChange={setStartLap} value={startLap}/>
+        <NumberInput onChangeCallback={setStartLap} value={startLap} />
         <p>Time to-go</p>
         <TimeInput onChange={handleChange} id='timeRemainingInputID'  value={timeRemaining}/>
         <p>Leader&apos;s pace</p>
