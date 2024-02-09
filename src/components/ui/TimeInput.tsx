@@ -24,13 +24,12 @@ export const TimeInput: React.FC<TimeInputProps> = ({onChange, id, value}, ...pr
         
       }
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        //onChange(event.target.id, event.target.value);
-    }
+    // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    //     //onChangeCallback(event.target.id, event.target.value);
+    // }
 
     return (
         <Input
-        onChange={handleChange}
         type="text"
         onKeyDown={onKeyDown}
         value={value}
