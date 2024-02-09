@@ -23,6 +23,7 @@ export const NumberInput: React.FC<NumberInputProps> = ({value, onChange}, ...pr
         type="text"
         onChange={handleChange}
         value={value}
+        {...props}
         />
     );
 }
