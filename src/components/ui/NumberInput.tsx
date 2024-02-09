@@ -11,11 +11,8 @@ export const NumberInput: React.FC<NumberInputProps> = ({value, onChange}, ...pr
 
     function handleChange(event: React.ChangeEvent<HTMLInputElement>){
         const value = event.target.value;
-
         // only handle change if input is a number
-        if (value.match(/[0-9]/) || value == ''){
-            onChange(event.target.value);
-        }
+        onChange(value.replace(/\D/, ''));
     }
 
     return (
