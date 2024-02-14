@@ -1,31 +1,28 @@
 import React, {useState} from "react"
 import {Input, InputProps} from '@/components/ui/Input';
-import { formatTime, addTimeDigit, removeTimeDigit } from "@/utils/timeUtils";
+import { formatTime } from "@/utils/timeUtils";
 
 interface TimeInputProps {
   value: string,
   id: string,
-  onChange: (id:string, value: string) => void;
+  onChangeCallback: (id:string, value: string) => void;
 }
 
-export const TimeInput: React.FC<TimeInputProps> = ({onChange, id, value}, ...props) => {
-
-  function onKeyDown(event: React.KeyboardEvent<HTMLInputElement>) {
-    const key = event.key;
-
-    if (key === 'Backspace') {
-      const newTime = removeTimeDigit(value);
-      onChange(id, newTime);
-    } else if (/^\d$/.test(key)) {
-      const newTime = addTimeDigit(value, key);
-      onChange(id, newTime);
-    }
+export const TimeInput: React.FC<TimeInputProps> = ({onChangeCallback, id, value}, ...props) => {
+  
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>){
+    let value = event.target.value;
+    // new input will be: xx:xxy, where y is the new digit and x are older.
+    // formatTime will return a newly formatted time string:
+    // xx:xy, where y is the new value.
+    value = formatTime(value);
+    onChangeCallback(id, value);
   }
-    
+
   return (
     <Input
     type="text"
-    onKeyDown={onKeyDown}
+    onChange={handleChange}
     value={value}
     id={id}
     {...props}
