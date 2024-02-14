@@ -1,9 +1,19 @@
 
+// formatTime will return a newly formatted time string:
+// xx:xy, where y is the new value.
 // output MM:SS
 function formatTime(timeStr: string): string {
-  let formattedTime = timeStr.padStart(4, '0');
-  formattedTime = formattedTime.slice(0, 2) + ':' + formattedTime.slice(2, 4)
-  return formattedTime;
+  
+  const cleanedInput = timeStr.replace(/\D/g, '');
+
+  // Ensure the input has at least 2 digits
+  const paddedInput = cleanedInput.padStart(4, '0');
+
+  // Extract minutes and seconds
+  const minutes = paddedInput.slice(paddedInput.length - 4, paddedInput.length - 2);
+  const seconds = paddedInput.slice(paddedInput.length - 2, paddedInput.length);
+
+  return `${minutes}:${seconds}`;
 }
 
 function pad(num: number): string {
@@ -39,37 +49,8 @@ function millisecondsToTimeStr(ms: number): string {
   return pad(mins) + ':' + pad(secs_remaining);
 }
 
-
-function addTimeDigit(timeStr: string, digit: string): string {
-
-  let tempStr = timeStr.replaceAll(':', '');
-
-  tempStr = tempStr + digit;
-
-  const tempLength = tempStr.length;
-  // const milisec = tempStr.slice(tempLength - 3, tempLength);
-  const sec = tempStr.slice(tempLength - 2, tempLength);
-  const min = tempStr.slice(tempLength - 4, tempLength - 2);
-
-  return min + ':' + sec;
-}
-
-
-function removeTimeDigit(timeStr: string): string {
-
-  let tempStr = timeStr.replaceAll(':', '');
-  //tempStr = tempStr.replaceAll('.', '');
-  
-  tempStr = '0' + tempStr.substring(0,4);
-
-  return formatTime(tempStr);
-}
-
-
 export {
   formatTime,
-  addTimeDigit,
   millisecondsToTimeStr,
-  removeTimeDigit,
   timeStrToNumber,
 };
