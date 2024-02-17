@@ -21,13 +21,12 @@ function pad(num: number): string {
 }
 
 /*
-  Takes time string in format MM:SS.mmm and converts it to milliseconds as a number.
-  // TODO: Change to just MM:SS
+  Takes time string in format MM:SS and converts it to milliseconds as a number.
 */
 function timeStrToNumber(str: string): number {
   
   const mins = Number(str.slice(0, 2)) * 60000;
-  const secs = Number(str.slice(3, 4)) * 1000;
+  const secs = Number(str.slice(3, 5)) * 1000;
   const ms = mins + secs;
   return ms;
 }
