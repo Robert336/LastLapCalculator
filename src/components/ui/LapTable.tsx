@@ -37,7 +37,7 @@ export function LapTable({startLap, laps}: LapTableProps) {
           return (
             <TableRow key={idx}>
               <TableCell>{Number(startLap) + idx}</TableCell>
-              <TableCell className='text-right'>{millisecondsToTimeStr(lap)}</TableCell>
+              <TableCell>{millisecondsToTimeStr(lap)}</TableCell>
             </TableRow>
           );
         })
