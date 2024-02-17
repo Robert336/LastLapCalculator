@@ -6,7 +6,7 @@ interface NumberInputProps extends InputProps {
     onChangeCallback: (value: string) => void;
 }
 
-export const NumberInput: React.FC<NumberInputProps> = ({value, onChangeCallback}, ...props) => {
+export const NumberInput: React.FC<NumberInputProps> = ({value, onChangeCallback, ...props}) => {
 
     function handleChange(event: React.ChangeEvent<HTMLInputElement>){
         const value = event.target.value;

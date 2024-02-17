@@ -27,7 +27,7 @@ export default function Home() {
   }
 
   function isFilled(): boolean{
-    if (timeRemaining === '00:00' || leaderPace === '00:00' || startLap === ''){
+    if (timeRemaining === '' || leaderPace === '' || startLap === ''){
       return false;
     } else {
       return true;
@@ -69,13 +69,13 @@ export default function Home() {
         </div>
         <div>
           <p>Time to-go</p>
-          <TimeInput onChangeCallback={handleChange} id='timeRemainingInputID'  value={timeRemaining}/>
+          <TimeInput onChangeCallback={handleChange} id='timeRemainingInputID'  value={timeRemaining} data-testid='timeRemainingInputID'/>
         </div>
         <div>
           <p>Leader&apos;s pace</p>
-          <TimeInput onChangeCallback={handleChange} id='leaderPaceInputID' value={leaderPace}/>
+          <TimeInput onChangeCallback={handleChange} id='leaderPaceInputID' value={leaderPace}  data-testid='leaderPaceInputID'/>
         </div>
-        <button className='bg-green-800 hover:bg-green-900 rounded h-8' onClick={handleClick}>Calculate</button>
+        <button className='bg-green-800 hover:bg-green-900 rounded h-8' onClick={handleClick} data-testid='calculateButton'>Calculate</button>
       </div>
       <div>
       {isFilled() ? 

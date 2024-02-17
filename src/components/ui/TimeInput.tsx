@@ -1,14 +1,15 @@
-import React, {useState} from "react"
+import React, {useState} from "react";
 import {Input, InputProps} from '@/components/ui/Input';
 import { formatTime } from "@/utils/timeUtils";
 
-interface TimeInputProps {
+interface TimeInputProps extends InputProps{
   value: string,
   id: string,
   onChangeCallback: (id:string, value: string) => void;
+  
 }
 
-export const TimeInput: React.FC<TimeInputProps> = ({onChangeCallback, id, value}, ...props) => {
+export const TimeInput: React.FC<TimeInputProps> = ({onChangeCallback, id, value, ...props}) => {
   
   function handleChange(event: React.ChangeEvent<HTMLInputElement>){
     let value = event.target.value;
