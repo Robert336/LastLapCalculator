@@ -12,4 +12,19 @@ describe("Calculator", () => {
         expect(screen.getByTestId('calculateButton')).toBeInTheDocument();
         expect(screen.getByText('Finish filling above to see lap table.')).toBeInTheDocument();
     });
+
+    it("handles time inputs", () => {
+
+    });
+
+    it("handles lap input", () => {
+
+    });
+
+});
+
+describe("Lap Table", () => {
+    it("renders lap times", () => {
+
+    });
 });
