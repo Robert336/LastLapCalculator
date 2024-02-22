@@ -34,6 +34,13 @@ function timeStrToNumber(str: string): number {
 
 function millisecondsToTimeStr(ms: number): string {
   
+  // used to add a negative sign to the start of the string
+  let negativeChar = '';
+  if (ms < 0) {
+    negativeChar = '-';
+    ms = ms * -1;
+  }
+
   // 1000 ms = 1 sec
   // 60 sec = 1 min
   // 60000 ms = 1 min
@@ -45,7 +52,7 @@ function millisecondsToTimeStr(ms: number): string {
   const secs_remaining = Math.floor(carry / 1000);
   carry = carry - secs_remaining * 1000
   
-  return pad(mins) + ':' + pad(secs_remaining);
+  return negativeChar + pad(mins) + ':' + pad(secs_remaining);
 }
 
 export {

@@ -68,7 +68,7 @@ export default function Home() {
         <div className="flex flex-col gap-5">
           <div>
             <p>Current lap</p>
-            <NumberInput onChangeCallback={setStartLap} value={startLap} />
+            <NumberInput onChangeCallback={setStartLap} value={startLap} data-testid='lapNumberInputID'/>
           </div>
           <div>
             <p>Time remaining at lap start</p>
@@ -82,11 +82,11 @@ export default function Home() {
         </div>
       
       </div>
-      <div className='max-w-60 m-5'>
+      <div className='max-w-60 m-5 p-5 rounded-lg border'>
       {isFilled() ? 
         <LapTable startLap={startLap} laps={laps}/> : 
         <h1 className="text-3xl text-gray-700 p-4 text-center">
-          Finish filling above to see lap table.
+          Finish filling fields to see lap table.
         </h1>
       }
       </div>
