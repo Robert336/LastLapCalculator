@@ -57,12 +57,12 @@ export default function Home() {
 
   return (
     <main
-      className={`bg-gray-900 flex min-h-screen flex-col items-center p-5 ${inter.className}
+      className={`bg-gray-900 text-white flex min-h-screen flex-col items-center p-5 ${inter.className}
         sm:grid sm:grid-cols-2 sm:items-start sm:gap-10`}
     >
       <div className='sm: sticky ms:top-0 sm:max-w-60 sm:justify-self-end'>
         <div className='pb-5 pt-5'>
-          <h1 className="text-2xl">Last Lap Calculator</h1>
+          <h1 className="text-2xl text-white">Last Lap Calculator</h1>
           <p className='text-xs text-cyan-400'>by: Robert M.</p>
         </div>
         <div className="flex flex-col gap-5">
@@ -70,7 +70,7 @@ export default function Home() {
             <p>Current lap</p>
             <NumberInput onChangeCallback={setStartLap} value={startLap} data-testid='lapNumberInputID'/>
           </div>
-          <div>
+          <div >
             <p>Time remaining at lap start</p>
             <TimeInput onChangeCallback={handleChange} id='timeRemainingInputID'  value={timeRemaining} data-testid='timeRemainingInputID'/>
           </div>
