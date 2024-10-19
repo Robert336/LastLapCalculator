@@ -1,3 +1,21 @@
+## Purpose
+Improve the process of forecasting the last lap of a time-limited race. 
+
+Input: 
+- Current lap number the leader is on
+- Time remaining when the leader last-crossed the line
+- Current race-pace of the leader (their avg lap time)
+
+Output:
+- Table forecasting the time remaining at the start of each lap 
+
+https://lastlap.robmazza.com
+## Example Use
+![lastlap_calc_example1](https://github.com/user-attachments/assets/753d47e5-2590-4628-b35d-989acebd4462)
+
+From the shown table, we know that the last-lap flag will be shown to drivers on lap #14, which means the leader will be crossing the finish line with 20 seconds left in the session. Otherwise, showing last-lap on lap #13 would rob the drivers of another racing lap, and lap #15 would run overtime by a minute causing a delay in the event schedule.
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
